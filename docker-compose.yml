@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  postgres-compose:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: fifa_api
+      POSTGRES_USER: fifa_api
+    ports:
+      - "5432:5432"
