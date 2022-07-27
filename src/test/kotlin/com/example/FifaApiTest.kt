@@ -11,9 +11,17 @@ class FifaApiTest {
     @Inject
     lateinit var application: EmbeddedApplication<*>
 
+    @Inject
+    lateinit var ping: Ping
+
     @Test
     fun testItWorks() {
         Assertions.assertTrue(application.isRunning)
+    }
+
+    @Test
+    fun testPing() {
+        Assertions.assertTrue(ping.ping() == "pong")
     }
 
 }
