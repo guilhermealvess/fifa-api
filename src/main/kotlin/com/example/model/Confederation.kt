@@ -1,5 +1,6 @@
 package com.example.model
 
+import java.util.Date
 import java.util.UUID
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -10,7 +11,7 @@ import javax.persistence.Table
 @Table(name = "confederation")
 data class Confederation(
     @Id
-    var id: UUID,
+    var id: UUID?=null,
 
     @Column(name = "name")
     var name: String,
@@ -19,5 +20,11 @@ data class Confederation(
     var president: String,
 
     @Column(name = "locale")
-    var locale: String
+    var locale: String,
+
+    @Column(name = "createdAt")
+    var createdAt: Date?=null,
+
+    @Column(name = "updatedAt")
+    var updatedAt: Date?=null
 )
